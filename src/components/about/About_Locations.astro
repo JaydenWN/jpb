@@ -1,0 +1,66 @@
+---
+import CtaButtonsDark from "../Cta-buttons-dark.astro";
+import AboutLocationCard from "./About_Location_Card.astro";
+---
+
+<section>
+    <div class="container">
+        <h1>Serving Up <span class="highlight">Good Times </span>Across VIC</h1>
+        <p>
+            We proudly cater to a wide range of private and corporate events
+            throughout regional Victoria, bringing smiles and shaking cocktails
+            wherever we go. We Cover:
+        </p>
+
+        <div class="locations">
+            <AboutLocationCard location="Wodonga" link="/" />
+            <AboutLocationCard location="Wangaratta" link="/" />
+            <AboutLocationCard location="Chiltern" link="/" />
+            <AboutLocationCard location="Rutherglen" link="/" />
+            <AboutLocationCard location="Yackandandah" link="/" />
+            <AboutLocationCard location="Tallangatta" link="/" />
+            <AboutLocationCard location="Tangambalanga" link="/" />
+            <AboutLocationCard location="Eskdale" link="/" />
+            <AboutLocationCard location="Barnawartha" link="/" />
+            <AboutLocationCard location="Baranduda" link="/" />
+            <AboutLocationCard location="Beechworth" link="/" />
+            <AboutLocationCard location="Kiewa" link="/" />
+        </div>
+        <div class="cta">
+            <h2>Area Not Listed?</h2>
+            <p>
+                Give Us a call or send us a message. We would love to hear from
+                you and learn more about your event.
+            </p>
+            <CtaButtonsDark />
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--dark);
+        color: #ffff;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 4em;
+    }
+    h1 {
+        font-size: 1.65rem;
+    }
+    .locations {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+    .cta {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+    .cta h2 {
+        font-size: 1.5rem;
+    }
+</style>

@@ -1,0 +1,47 @@
+---
+import ContactForm from "../Contact_Form.astro";
+import AboutWhyCard from "./About_Why_Card.astro";
+---
+
+<section>
+    <div class="container">
+        <h1>Why Choose Jonesy Private Bartending?</h1>
+        <p>
+            Choosing Jonesy means choosing expertise, passion, and personality
+            for your next event. Here's why we're the perfect addition:
+        </p>
+
+        <div class="why-cards">
+            <AboutWhyCard
+                title="RSA Certified Bartenders"
+                text="Rest assured knowing our bartenders are fully RSA certified, ensuring responsible and professional alcohol service at every event."
+            />
+
+            <AboutWhyCard
+                title="Tailored Experiences"
+                text="We customize our menus and services specifically to your event, matching your style, theme, and guest preferences perfectly."
+            />
+
+            <AboutWhyCard
+                title="Stress-Free Service"
+                text="From setup to clean-up, we handle all bar logistics seamlessly, allowing you to fully enjoy your event."
+            />
+        </div>
+    </div>
+</section>
+
+<style>
+    h1 {
+        font-size: 1.65em;
+    }
+    .why-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 4em;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+</style>

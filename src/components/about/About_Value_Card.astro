@@ -1,0 +1,23 @@
+---
+const { title, text } = Astro.props;
+---
+
+<div class="about-value-card">
+    <h2>{title}</h2>
+    <p>{text}</p>
+</div>
+
+<style>
+    h2 {
+        font-family: "heading", serif;
+        font-size: 1.2rem;
+    }
+    .about-value-card {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        padding: 1em;
+        border: 1px solid; /* border width and style */
+        border-image: linear-gradient(to right, var(--gold), #4d3d00) 1;
+    }
+</style>

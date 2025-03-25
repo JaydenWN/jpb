@@ -1,0 +1,65 @@
+---
+import CtaButtonsLight from "../Cta-buttons-light.astro";
+import AboutValueCard from "./About_Value_Card.astro";
+---
+
+<section>
+    <div class="container">
+        <h1>What Drives Us at Jonesy Private Bartending</h1>
+        <p>
+            At Jonesy Private Bartending, everything we do revolves around
+            delivering incredible drinks, genuine smiles, and stress-free
+            events. Our core values define our approach to each and every
+            celebration we serve.
+        </p>
+        <div class="value-cards">
+            <AboutValueCard
+                title="Fun & Professional"
+                text="We believe your event deserves bartenders who can balance lively entertainment with polished, professional service. Our RSA-certified team brings positive vibes and a welcoming atmosphere, ensuring your guests feel comfortable, relaxed, and thoroughly entertained from start to finish."
+            />
+
+            <AboutValueCard
+                title="Exceptional Customer Service"
+                text="Your satisfaction and enjoyment are at the very heart of everything we do. From the moment you reach out to Jonesy Private Bartending, you'll experience attentive, personalized service designed to make planning effortless and your event stress free and memorable."
+            />
+
+            <AboutValueCard
+                title="Creativity & Quality"
+                text="Innovation and passion inspire our approach to bartending. We continually create unique cocktails and mocktails, carefully selecting quality ingredients and stylish presentations to offer drink experiences that are as deliciously memorable as they are Instagram-worthy."
+            />
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Experience the Jonesy Difference?</h2>
+            <p>
+                Discover why event planners across Victoria choose Jonesy
+                Private Bartending for unforgettable celebrations.
+            </p>
+            <CtaButtonsLight />
+        </div>
+    </div>
+</section>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 4em;
+    }
+    h1 {
+        font-size: 1.65rem;
+    }
+    .value-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+    .cta-section {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+    .cta-section h2 {
+        font-size: 1.65rem;
+    }
+</style>

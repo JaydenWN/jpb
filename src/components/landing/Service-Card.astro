@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets";
+
+const { image, link, cta, title } = Astro.props;
+---
+
+<div class="service">
+    <h2>{title}</h2>
+    <div class="service-card">
+        <Image src={image} alt={title} class="service-image" />
+        <div class="text-content">
+            <slot />
+            <a href={link}>{cta}</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .service-card {
+        display: flex;
+        flex-direction: column;
+        box-shadow: var(--box-shadow);
+        border-radius: 3px;
+    }
+    a {
+        background-color: var(--gold);
+        border-radius: 6em;
+        padding: 0.5em 1.25em;
+        text-decoration: none;
+        color: var(--dark);
+        max-width: fit-content;
+        margin-left: auto;
+    }
+    .text-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        padding: 1em;
+        background-color: #fff;
+        border-radius: 0px 0px 3px 3px;
+    }
+    .service-image {
+        width: 100%;
+        height: auto;
+        border-radius: 3px 3px 0px 0px;
+    }
+    h2 {
+        font-size: 1.5em;
+        margin-bottom: 1em;
+    }
+</style>

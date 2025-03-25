@@ -1,0 +1,65 @@
+---
+import { Image } from "astro:assets";
+import tickIcon from "@icons/tick.svg";
+import serviceImage from "@images/private-event-bartending.jpg";
+import CtaButtonsDark from "../Cta-buttons-dark.astro";
+const serviceTitle = "Private Event Bartending";
+---
+
+<section>
+    <div class="container">
+        <h1>{serviceTitle}</h1>
+        <p>
+            Relax and enjoy your event as our RSA-certified bartenders expertly
+            handle all your drink service needs, creating delicious cocktails,
+            mocktails, and more. We bring personality and professionalism to
+            every pour!
+        </p>
+        <Image src={serviceImage} alt={serviceTitle} class="service-image" />
+
+        <ul>
+            <li>
+                <Image src={tickIcon} alt="tickmark" />
+                RSA-certified bartenders
+            </li>
+
+            <li>
+                <Image src={tickIcon} alt="tickmark" />
+                Custom drink menus
+            </li>
+
+            <li>
+                <Image src={tickIcon} alt="tickmark" />
+                Stress-free service
+            </li>
+        </ul>
+
+        <CtaButtonsDark />
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--dark);
+        color: #ffff;
+    }
+    .service-image {
+        width: 100%;
+        height: auto;
+        border-radius: 3px;
+        box-shadow: var(--box-shadow);
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 3em;
+    }
+    h1 {
+        font-size: 1.65rem;
+    }
+    li {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+    }
+</style>

@@ -1,0 +1,115 @@
+---
+import { Image } from "astro:assets";
+import HeaderLink from "./HeaderLink.astro";
+import hamburger from "@icons/hamburger.svg";
+import close from "@icons/close.svg";
+import TestimonialCard from "./Testimonial-Card.astro";
+---
+
+<section>
+    <div class="container">
+        <h1>Client Testimonials</h1>
+    </div>
+    <div class="embla">
+        <div class="embla__container">
+            <div class="embla__slide">
+                <TestimonialCard
+                    title="Jonesy Bartending Turned Our Party Into Something Special!"
+                    quote="From start to finish, the Jonesy Private Bartending team was incredible! Delicious cocktails, friendly faces, and super professional service. Highly recommended!"
+                    quotee="Sarah M., Wangaratta VIC"
+                />
+            </div>
+            <div class="embla__slide">
+                <TestimonialCard
+                    title="A Seamless, Stylish Experience Thanks to Jonesy Bartending!"
+                    quote="From the moment we booked, everything was easy and stress-free. The cocktails looked amazing and tasted even better. Our guests couldn’t stop talking about the service. Will definitely be booking again!"
+                    quotee="Jake T., Albury NSW"
+                />
+            </div>
+            <div class="embla__slide">
+                <TestimonialCard
+                    title="Made Our Wedding Reception Feel Luxurious and Fun!"
+                    quote="Jonesy Private Bartending added such a special touch to our big day. The team was punctual, friendly, and brought great energy. The drinks were flawless and beautifully presented. A five-star experience all around!"
+                    quotee="Emily R., Shepparton VIC"
+                />
+            </div>
+        </div>
+    </div>
+    <div class="embla__dots">
+        <button class="embla__dot" type="button"></button>
+        <button class="embla__dot" type="button"></button>
+        <button class="embla__dot" type="button"></button>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: #fff;
+        padding-bottom: 2em;
+    }
+    h1 {
+        font-size: 1.65rem;
+    }
+    .embla {
+        overflow: hidden;
+        z-index: 0;
+    }
+    .embla__container {
+        display: flex;
+    }
+    .embla__slide {
+        flex: 0 0 100%;
+        min-width: 0;
+    }
+    /* Styles for the indicator dots */
+    .embla__dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    .embla__dot {
+        width: 12px;
+        min-height: 12px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background-color: var(--light);
+        border: none;
+        margin: 0 4px;
+        cursor: pointer;
+    }
+    .embla__dot.is-selected {
+        background-color: var(--gold);
+    }
+</style>
+
+<!-- Use client:load to ensure this script runs on the client -->
+<script>
+    import EmblaCarousel from "embla-carousel";
+
+    const emblaNode = document.querySelector(".embla");
+    const options = { loop: false };
+    const emblaApi = EmblaCarousel(emblaNode, options);
+
+    // Get the dots for controlling the carousel
+    const dots = document.querySelectorAll(".embla__dot");
+
+    // Function to update the active dot based on the current slide index
+    const setSelectedDot = (index) => {
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("is-selected", i === index);
+        });
+    };
+
+    // Update the active dot whenever the carousel slide changes
+    emblaApi.on("select", () => {
+        setSelectedDot(emblaApi.selectedScrollSnap());
+    });
+
+    // Set the initial active dot
+    setSelectedDot(emblaApi.selectedScrollSnap());
+
+    // Add click event to each dot so clicking navigates to that slide
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => emblaApi.scrollTo(index));
+    });
+</script>

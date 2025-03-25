@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import jonesyImage from "@images/jonesy-pouring-drinks.png";
+---
+
+<section>
+    <div class="container">
+        <h1>How <span class="highlight">Jonesy Got Shaking</span></h1>
+        <p>
+            Founded by passionate mixologist and hospitality professional,
+            Brendan "Jonesy" Jones, Jonesy Private Bartending started with a
+            vision to combine exceptional drinks with unmatched personality.
+            With years of bartending experience under their belt and a love for
+            making people smile, Jonesy decided it was time to bring
+            professional cocktail experiences directly to regional celebrations
+            and corporate events. Today, Jonesy and the team continue to delight
+            guests and create memorable events all across VIC.
+        </p>
+
+        <Image
+            src={jonesyImage}
+            alt="Jonesy private bartending services"
+            class="about-image"
+        />
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--dark);
+        color: #ffff;
+    }
+    h1 {
+        font-size: 1.65rem;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+    .about-image {
+        width: 100%;
+        height: auto;
+        box-shadow: var(--box-shadow);
+    }
+</style>

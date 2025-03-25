@@ -1,0 +1,20 @@
+---
+import ContactForm from "../components/Contact_Form.astro";
+import ServicePrivate from "../components/services/Service_Private.astro";
+import SubpageHeader from "../components/Subpage_Header.astro";
+
+import Layout from "../layouts/BaseLayout.astro";
+---
+
+<Layout
+    title="Jonesy Private Bartending"
+    description="Lorem ipsum dolor sit amet"
+    heroImage="/blog-placeholder-about.jpg"
+>
+    <SubpageHeader
+        title="Bartending Services Designed to Impress"
+        text="Professional bartending tailored to your event, serving Victoria Australia with flair and fun!"
+    />
+    <ServicePrivate />
+    <ContactForm />
+</Layout>

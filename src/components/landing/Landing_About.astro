@@ -1,0 +1,83 @@
+---
+import { Image } from "astro:assets";
+import whiskeyImage from "@images/whiskey-glass.jpg";
+import LandingValues from "./Landing_Values.astro";
+import CtaButtonsDark from "../Cta-buttons-dark.astro";
+---
+
+<section>
+    <div class="container">
+        <div class="about-container">
+            <h1>About Our <span class="highlight">Bar Staff Service</span></h1>
+            <p>
+                Jonesy Private Bartending brings the cocktail bar to your
+                celebration! Whether you're planning a corporate gathering,
+                private party, or wedding reception, our RSA-certified
+                bartenders mix professionalism with personality for events
+                across Victoria.
+            </p>
+            <Image
+                src={whiskeyImage}
+                alt={"mobile cocktail bar service"}
+                class="about-image"
+            />
+        </div>
+
+        <div class="mission-container">
+            <h2>Our <span class="highlight">Mission</span></h2>
+            <p>
+                Our mission is simple: deliver exceptional bartending services
+                with flair, friendliness, and unforgettable flavours.
+            </p>
+        </div>
+
+        <div class="values-container">
+            <h2>Our <span class="highlight">Values</span></h2>
+            <LandingValues />
+        </div>
+
+        <div class="why-us-container">
+            <h2>Why Us?</h2>
+            <p>
+                Choose Jonesy Private Bartending to elevate your event
+                experience. Our professional bartenders are RSA-certified,
+                personable, and ready to impress your guests every time!
+            </p>
+            <CtaButtonsDark />
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--dark);
+        color: #ffff;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 4em;
+    }
+    .about-container,
+    .mission-container,
+    .values-container,
+    .why-us-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+    .about-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 6px;
+        aspect-ratio: 1/1;
+        box-shadow: var(--box-shadow);
+    }
+</style>

@@ -1,0 +1,101 @@
+---
+import { Image } from "astro:assets";
+import HeaderLink from "./HeaderLink.astro";
+import hamburger from "@icons/hamburger.svg";
+import close from "@icons/close.svg";
+---
+
+<div class="navbar">
+    <h1>Logo</h1>
+    <button class="mobile-nav-controls">
+        <Image
+            src={hamburger}
+            alt="open mobile navigation menu"
+            class="open-btn"
+        />
+        <Image
+            src={close}
+            alt="close mobile navigation menu"
+            class="close-btn"
+        />
+    </button>
+    <nav>
+        <HeaderLink href="/">Home</HeaderLink>
+        <HeaderLink href="/our-services">Our Service</HeaderLink>
+        <HeaderLink href="/about">About</HeaderLink>
+        <HeaderLink href="/contact">Contact</HeaderLink>
+    </nav>
+</div>
+
+<style>
+    .navbar {
+        display: flex;
+        min-height: 58px;
+        align-items: center;
+        padding: 0px 1em;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-sizing: border-box;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+        border-bottom: 1px solid var(--light);
+        box-shadow: 0px 0px 6px #3030302d;
+        background-color: #f7f3eb94;
+        z-index: 2;
+    }
+    .mobile-nav-controls {
+        background-color: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .open-btn {
+        display: block;
+    }
+    .close-btn {
+        display: none;
+        padding-right: 3px;
+    }
+    nav {
+        display: none;
+        position: fixed;
+        background-color: var(--light);
+        box-sizing: border-box;
+        width: 100%;
+        height: calc(100dvh - 58px);
+        top: 58px;
+        left: 0;
+        flex-direction: column;
+        gap: 2em;
+        font-size: 1.6rem;
+        padding: 2em;
+        z-index: 2;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const mobileNavButton = document.querySelector(".mobile-nav-controls");
+        const nav = document.querySelector("nav");
+        const openBtn = document.querySelector(".open-btn");
+        const closeBtn = document.querySelector(".close-btn");
+
+        mobileNavButton.addEventListener("click", () => {
+            if (nav.style.display === "flex") {
+                // Close the nav
+                nav.style.display = "none";
+                openBtn.style.display = "block";
+                closeBtn.style.display = "none";
+            } else {
+                // Open the nav
+                nav.style.display = "flex";
+                openBtn.style.display = "none";
+                closeBtn.style.display = "block";
+            }
+        });
+    });
+</script>

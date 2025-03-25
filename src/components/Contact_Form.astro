@@ -1,0 +1,136 @@
+---
+import { Image } from "astro:assets";
+import phoneIcon from "@icons/phone-solid.svg";
+import emailIcon from "@icons/email-solid.svg";
+---
+
+<section>
+    <div class="container">
+        <div class="header">
+            <h1>Let's Mix Up Something Amazing!</h1>
+            <p>
+                Send us a quick message to check availability and start planning
+                your perfect event.
+            </p>
+        </div>
+        <form autocomplete="on">
+            <div class="form-section">
+                <label for="name">Name</label>
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    required
+                    autocomplete="name"
+                    autocorrect="on"
+                />
+            </div>
+            <div class="form-section">
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                    autocomplete="email"
+                    autocorrect="on"
+                />
+            </div>
+            <div class="form-section">
+                <label for="phone">Phone</label>
+                <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    required
+                    autocomplete="tel"
+                    autocorrect="on"
+                />
+            </div>
+            <div class="form-section">
+                <label for="message">Message</label>
+                <textarea
+                    rows="8"
+                    name="message"
+                    id="message"
+                    required
+                    autocorrect="on"></textarea>
+            </div>
+        </form>
+
+        <div class="direct-chat">
+            <h2>Prefer to Chat?</h2>
+            <p>We'd love to hear from you directly. Reach out today!</p>
+
+            <div class="info-cards">
+                <div class="direct-info">
+                    <Image
+                        src={emailIcon}
+                        alt="email jonesy private bartending"
+                        class="info-icon"
+                    />
+                    <p>email@email.com</p>
+                </div>
+                <div class="direct-info">
+                    <Image
+                        src={phoneIcon}
+                        alt="email jonesy private bartending"
+                        class="info-icon"
+                    />
+                    <p>0423740299</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    h1 {
+        font-size: 1.65em;
+    }
+    .header {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        margin-top: 2em;
+    }
+    .form-section {
+        gap: 0.3em;
+        display: flex;
+        flex-direction: column;
+    }
+    input,
+    textarea {
+        border: none;
+        padding: 0.5em;
+        box-shadow: var(--box-shadow);
+        border-radius: 3px;
+        font-family: "paragraph", sans-serif;
+        font-size: 1em;
+    }
+    .direct-chat {
+        margin-top: 4em;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+    h2 {
+        font-size: 1.3em;
+    }
+    .direct-info {
+        display: flex;
+        align-items: center;
+        gap: 0.6em;
+        font-weight: 600;
+    }
+    .info-cards {
+        display: flex;
+        flex-direction: row;
+        gap: 1.25em;
+    }
+</style>

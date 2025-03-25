@@ -1,0 +1,64 @@
+---
+import ServiceCard from "./Service-Card.astro";
+import privateImage from "@images/private-event-bartending.jpg";
+import corporateImage from "@images/corporate-event-bartending.jpg";
+import weddingImage from "@images/wedding-bartending-service.jpg";
+---
+
+<section>
+    <div class="container">
+        <div class="service-cards">
+            <ServiceCard
+                image={privateImage}
+                title="Private Event Bartending"
+                link="/"
+                cta="Request A Quote"
+            >
+                <p>
+                    Let us take care of the drinks! Jonesy Private Bartending
+                    provides experienced, RSA-certified bartenders who expertly
+                    serve delicious cocktails, mocktails, beer, and wine—keeping
+                    your guests smiling and the good times flowing.
+                </p>
+            </ServiceCard>
+
+            <ServiceCard
+                image={corporateImage}
+                title="Corporate Event Bartending"
+                link="/"
+                cta="Get Your Custom Proposal"
+            >
+                <p>
+                    Impress your colleagues and clients with Jonesy Private
+                    Bartending's professional, RSA-certified bartenders. We
+                    craft stylish cocktails, offer premium beverage service, and
+                    create a vibrant atmosphere, ensuring your corporate events
+                    become memorable networking opportunities.
+                </p>
+            </ServiceCard>
+
+            <ServiceCard
+                image={weddingImage}
+                title="Wedding Bartending Services"
+                link="/"
+                cta="Plan Your Wedding Drinks"
+            >
+                <p>
+                    Make your special day unforgettable with our wedding
+                    bartending services. Our friendly and professional
+                    RSA-certified bartenders bring charm, elegance, and
+                    delicious drink menus tailored perfectly to your
+                    celebration, so you can relax and cherish every moment.
+                </p>
+            </ServiceCard>
+        </div>
+    </div>
+</section>
+
+<style>
+    .service-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 4em;
+    }
+</style>

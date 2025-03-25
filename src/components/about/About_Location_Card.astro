@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+const { location, link } = Astro.props;
+import locationPin from "@icons/location-pin.svg";
+---
+
+<li>
+    <a href={link}>
+        <Image src={locationPin} alt={location} />
+        {location}
+    </a>
+</li>
+
+<style>
+    li {
+        width: 100%;
+        box-sizing: border-box;
+        background-color: transparent;
+        padding: 1em;
+        border: 1px solid #ffff;
+        list-style-type: none;
+        border-radius: 3px;
+    }
+    a {
+        display: flex;
+        gap: 2em;
+        align-items: center;
+        text-decoration: none;
+        font-weight: 600;
+        color: #ffff;
+    }
+</style>

@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import stars from "@icons/stars.svg";
+
+const { title, quote, quotee } = Astro.props;
+---
+
+<div class="testimonial">
+    <Image class="stars" src={stars} alt="5 star bar staff service" />
+    <h2>{title}</h2>
+    <blockquote>{quote}</blockquote>
+    <p class="quotee">{quotee}</p>
+</div>
+
+<style>
+    .testimonial {
+        background-color: var(--dark);
+        color: #ffff;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        margin: 0px 1em;
+        border-radius: 3px;
+        box-shadow: var(--box-shadow);
+        margin-bottom: 1em;
+        text-align: center;
+        z-index: 0;
+    }
+    p {
+        background-color: #fff;
+        color: var(--dark);
+        font-weight: 800;
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.5em 1em;
+    }
+    h2 {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        padding: 1em;
+    }
+    blockquote {
+        padding: 0px 1em 1em 1em;
+    }
+    .stars {
+        margin: 2em auto 0px auto;
+    }
+</style>

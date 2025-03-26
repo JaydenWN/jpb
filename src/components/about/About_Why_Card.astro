@@ -21,4 +21,16 @@ const { title, text } = Astro.props;
         display: flex;
         flex-direction: column;
     }
+
+    @media (min-width: 768px){
+        .why-card{
+            flex-direction: column;
+            width: calc(50% - 1.5em);
+            box-sizing: border-box;
+            align-items: center;
+        }
+        h2{
+            text-align: center;
+        }
+    }
 </style>

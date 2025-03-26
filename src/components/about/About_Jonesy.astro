@@ -43,4 +43,21 @@ import jonesyImage from "@images/jonesy-pouring-drinks.png";
         height: auto;
         box-shadow: var(--box-shadow);
     }
+
+    @media (min-width: 768px){
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "title title" "textContent image";
+        }
+        .container h1{
+            grid-area: title;
+        }
+        .container p{
+            grid-area: textContent;
+        }
+        .about-image:{
+            grid-area: image;
+        }
+    }
 </style>

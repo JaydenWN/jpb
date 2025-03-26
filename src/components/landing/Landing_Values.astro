@@ -48,4 +48,20 @@
         box-shadow: var(--box-shadow);
         border-image: linear-gradient(to right, var(--gold), #4d3d00) 1;
     }
+
+    @media (min-width: 768px){
+        .value-container{
+            flex-direction: row;
+            gap: 1em;
+            flex-wrap: wrap;
+        }
+        .value-card{
+            width: calc(50% - .5em);
+            box-sizing: border-box;
+            padding: 2em;
+        }
+        .value-card:last-of-type{
+            width: 100%;
+        }
+    }
 </style>

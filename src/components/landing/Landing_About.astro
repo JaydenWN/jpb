@@ -80,4 +80,34 @@ import CtaButtonsDark from "../Cta-buttons-dark.astro";
         aspect-ratio: 1/1;
         box-shadow: var(--box-shadow);
     }
+
+    @media (min-width: 768px){
+        .container{
+            gap: 6em;
+        }
+        .about-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "title image"
+            "paragraph image";
+        }
+        .about-container h1{
+            grid-area: title;
+        }
+        .about-container p{
+            grid-area: paragraph;
+        }
+        .about-image{
+            grid-area: image;
+        }
+        .mission-container{
+            width: 75%;
+        }
+        .why-us-container{
+            gap: 2em;
+        }
+        .why-us-container p{
+            width: 75%
+        }
+    }
 </style>

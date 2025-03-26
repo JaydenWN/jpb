@@ -44,4 +44,16 @@ import AboutWhyCard from "./About_Why_Card.astro";
         flex-direction: column;
         gap: 2em;
     }
+
+    @media (min-width: 768px){
+        .container{
+            gap: 4em;
+        }
+        .why-cards{
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 3em;
+            margin-top: 2em;
+        }
+    }
 </style>

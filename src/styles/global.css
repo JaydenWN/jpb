@@ -169,3 +169,9 @@ html {
 .container {
 	padding: 2em 1em;
 }
+
+@media (min-width: 768px) {
+	.container{
+		padding: 4em 4em;
+	}
+}

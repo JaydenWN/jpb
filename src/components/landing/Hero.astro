@@ -16,7 +16,10 @@ import CtaButtonsLight from "@components/Cta-buttons-light.astro";
             Professional bartending meets good vibes—serving unforgettable
             experiences across Albury, Wangaratta, Beechworth, and beyond!
         </p>
-        <CtaButtonsLight />
+        <div class="cta-button-area">
+
+            <CtaButtonsLight />
+        </div>
     </header>
 </div>
 
@@ -34,5 +37,29 @@ import CtaButtonsLight from "@components/Cta-buttons-light.astro";
         width: 70%;
         margin: 0px auto;
         height: auto;
+    }
+
+    @media (min-width: 768px){
+        header{
+            display: grid;
+            grid-template-areas: "title image"
+            "heroText image"
+            "buttons buttons";
+            grid-template-columns: 1.5fr 1fr;
+            gap: 3em;
+        }
+        header h1{
+            grid-area: title;
+        }
+        header p{
+            grid-area: heroText;
+        }
+        .cta-button-area{
+            grid-area: buttons;
+        }
+        .hero-img{
+            grid-area: image;
+            width: 100%;
+        }
     }
 </style>

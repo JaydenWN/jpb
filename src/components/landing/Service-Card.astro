@@ -48,4 +48,20 @@ const { image, link, cta, title } = Astro.props;
         font-size: 1.5em;
         margin-bottom: 1em;
     }
+
+    @media (min-width: 768px){
+        .service{
+            width: calc(50% - .5em);
+            min-height: 100%;
+        }
+        .service-card{
+        }
+        .text-content{
+            padding: 2em;
+        }
+        h2{
+            font-size: 1.15em;
+        }
+        
+    }
 </style>

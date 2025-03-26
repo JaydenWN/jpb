@@ -1,44 +1,45 @@
 ---
 import { Image } from "astro:assets";
 import tickIcon from "@icons/tick.svg";
-import serviceImage from "@images/corporate-event-bartending.jpg";
-import CtaButtonsLight from "../Cta-buttons-light.astro";
-const serviceTitle = "Corporate Event Bartending";
+import serviceImage from "@images/wedding-bartending-service.jpg";
+import CtaButtonsDark from "../Cta-buttons-dark.astro";
+const serviceTitle = "Wedding Bartending Services";
 ---
 
 <section>
     <div class="container">
         <h1>{serviceTitle}</h1>
         <p>
-            Make an unforgettable impression at your next corporate gathering.
-            Our team serves up stylish cocktails, premium beverages, and
-            friendly service that enhances networking and leaves lasting
-            impressions.
+            Celebrate your big day stress-free, knowing our friendly bartenders will charm your guests with specially crafted cocktails and flawless service, perfectly tailored to your unique celebration.
         </p>
         <Image src={serviceImage} alt={serviceTitle} class="service-image" />
 
         <ul>
             <li>
                 <Image src={tickIcon} alt="tickmark" />
-                Professional presentation
+                Elegant cocktail menus
             </li>
 
             <li>
                 <Image src={tickIcon} alt="tickmark" />
-                Customized beverage solutions
+                Friendly, personable staff
             </li>
 
             <li>
                 <Image src={tickIcon} alt="tickmark" />
-                Reliable, seamless service
+                Comprehensive setup and cleanup
             </li>
         </ul>
 
-        <CtaButtonsLight />
+        <CtaButtonsDark />
     </div>
 </section>
 
 <style>
+    section {
+        background-color: var(--dark);
+        color: #ffff;
+    }
     .service-image {
         width: 100%;
         height: auto;

@@ -1,0 +1,22 @@
+---
+import ContactHours from "../components/contact/Contact_Hours.astro";
+import ContactPageForm from "../components/contact/Contact_Page_Form.astro";
+import ContactDirect from '../components/contact/Contact_Direct.astro'
+import SubpageHeader from "../components/Subpage_Header.astro";
+import Layout from "../layouts/BaseLayout.astro";   
+---
+
+<Layout
+    title="Contact Jonesy Private Bartending"
+    description="Lorem ipsum dolor sit amet"
+    heroImage="/blog-placeholder-about.jpg"
+>
+    <SubpageHeader
+        title="Get in Touch with Jonesy Private Bartending"
+        text="Ready to shake things up at your next event? We're just a message away!"
+    />
+
+    <ContactPageForm/>
+    <ContactHours/>
+    <ContactDirect/>
+</Layout>

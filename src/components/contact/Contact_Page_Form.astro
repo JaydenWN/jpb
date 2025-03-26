@@ -1,0 +1,108 @@
+---
+
+---
+<section>
+    <div class="container">
+        <div class="contact-form-head">
+            <h1><span class="highlight">Plan Your Event</span> with Jonesy!</h1>
+            <p>Fill out the form below and we'll get back to you swiftly with everything you need.</p>
+
+        </div>
+        <form autocomplete="on">
+            <div class="form-section">
+                <label for="name">Name</label>
+                <input
+                type="text"
+                name="name"
+                id="name"
+                required
+                autocomplete="name"
+                autocorrect="on"
+                />
+            </div>
+            <div class="form-section">
+                <label for="email">Email</label>
+                <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                autocomplete="email"
+                autocorrect="on"
+                />
+            </div>
+            <div class="form-section">
+                <label for="phone">Phone</label>
+                <input
+                type="tel"
+                name="phone"
+                id="phone"
+                required
+                autocomplete="tel"
+                autocorrect="on"
+                />
+            </div>
+            <div class="form-section">
+                <label for="message">Message</label>
+                <textarea
+                rows="8"
+                name="message"
+                id="message"
+                required
+                autocorrect="on"></textarea>
+            </div>
+            <button class="submit-btn">Submit Message</button>
+        </form>
+    </div>
+    </section>
+
+<style>
+    section{
+        background: var(--dark);
+        color: #ffff
+
+    }
+    .contact-form-head{
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+    h1 {
+        font-size: 1.65em;
+    }
+    .header {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        margin-top: 2em;
+    }
+    .form-section {
+        gap: 0.3em;
+        display: flex;
+        flex-direction: column;
+    }
+    input,
+    textarea {
+        border: none;
+        padding: 0.5em;
+        box-shadow: var(--box-shadow);
+        border-radius: 3px;
+        font-family: "paragraph", sans-serif;
+        font-size: 1em;
+    }
+    .submit-btn{
+        background-color: var(--gold);
+        border-radius: 6em;
+        border: none;
+        padding: .65em 1em;
+        width: fit-content;
+        font-family: 'paragraph', sans-serif;
+        font-weight: 700;
+        margin-left: auto;
+    }
+</style>

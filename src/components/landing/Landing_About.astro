@@ -81,33 +81,40 @@ import CtaButtonsDark from "../Cta-buttons-dark.astro";
         box-shadow: var(--box-shadow);
     }
 
-    @media (min-width: 768px){
-        .container{
+    @media (min-width: 768px) {
+        .container {
             gap: 6em;
         }
-        .about-container{
+        .about-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-areas: "title image"
-            "paragraph image";
+            grid-template-areas:
+                "title image"
+                "paragraph image";
         }
-        .about-container h1{
+        .about-container h1 {
             grid-area: title;
         }
-        .about-container p{
+        .about-container p {
             grid-area: paragraph;
         }
-        .about-image{
+        .about-image {
             grid-area: image;
         }
-        .mission-container{
+        .mission-container {
             width: 75%;
         }
-        .why-us-container{
+        .why-us-container {
             gap: 2em;
         }
-        .why-us-container p{
-            width: 75%
+        .why-us-container p {
+            width: 75%;
+        }
+    }
+    @media (min-width: 1024px) {
+        .about-container {
+            grid-template-rows: auto 1fr;
+            gap: 3em;
         }
     }
 </style>

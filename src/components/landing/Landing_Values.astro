@@ -49,19 +49,33 @@
         border-image: linear-gradient(to right, var(--gold), #4d3d00) 1;
     }
 
-    @media (min-width: 768px){
-        .value-container{
+    @media (min-width: 768px) {
+        .value-container {
             flex-direction: row;
             gap: 1em;
             flex-wrap: wrap;
         }
-        .value-card{
-            width: calc(50% - .5em);
+        .value-card {
+            width: calc(50% - 0.5em);
             box-sizing: border-box;
             padding: 2em;
         }
-        .value-card:last-of-type{
+        .value-card:last-of-type {
             width: 100%;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .value-card:last-of-type {
+            width: 100%;
+            text-align: center;
+        }
+        .value-container {
+            gap: 2em;
+        }
+        .value-card {
+            width: calc(50% - 1em);
+            padding: 3em;
         }
     }
 </style>

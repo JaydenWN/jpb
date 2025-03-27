@@ -57,7 +57,6 @@ import emailIcon from "@icons/email-solid.svg";
                     autocorrect="on"></textarea>
             </div>
             <button class="submit-btn">Submit Message</button>
-
         </form>
 
         <div class="direct-chat">
@@ -71,7 +70,7 @@ import emailIcon from "@icons/email-solid.svg";
                         alt="email jonesy private bartending"
                         class="info-icon"
                     />
-                    <p>email@email.com</p>
+                    <p>contact@jonesyprivatebartending.com</p>
                 </div>
                 <div class="direct-info">
                     <Image
@@ -79,7 +78,7 @@ import emailIcon from "@icons/email-solid.svg";
                         alt="email jonesy private bartending"
                         class="info-icon"
                     />
-                    <p>0423740299</p>
+                    <p>0423 740 299</p>
                 </div>
             </div>
         </div>
@@ -132,24 +131,43 @@ import emailIcon from "@icons/email-solid.svg";
     }
     .info-cards {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: 1.25em;
     }
-    .submit-btn{
+    .submit-btn {
         background-color: var(--gold);
         border-radius: 6em;
         border: none;
-        padding: .65em 1em;
+        padding: 0.65em 1em;
         width: fit-content;
-        font-family: 'paragraph', sans-serif;
+        font-family: "paragraph", sans-serif;
         font-weight: 700;
         margin-left: auto;
+        font-size: 1em;
+        color: var(--dark);
+        box-shadow: var(--box-shadow);
     }
 
-    @media (min-width: 768px){
-        form{
+    @media (min-width: 768px) {
+        form {
             width: 65%;
-            margin: 4em 0px
+            margin: 4em 0px;
+        }
+        .info-cards {
+            flex-direction: row;
+            gap: 4em;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .submit-btn {
+            cursor: pointer;
+            transition: all 0.15s ease-in-out;
+            margin-top: 2em;
+        }
+        .submit-btn:hover {
+            box-shadow: none;
+            color: #fff;
         }
     }
 </style>

@@ -21,9 +21,15 @@ const { title, text } = Astro.props;
         border-image: linear-gradient(to right, var(--gold), #4d3d00) 1;
     }
 
-    @media (min-width: 768px){
-        .about-value-card{
+    @media (min-width: 768px) {
+        .about-value-card {
             padding: 3em;
+        }
+    }
+
+    @media (min-width: 1440px) {
+        .about-value-card {
+            text-align: center;
         }
     }
 </style>

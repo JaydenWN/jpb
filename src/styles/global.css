@@ -171,7 +171,20 @@ html {
 }
 
 @media (min-width: 768px) {
-	.container{
+	.container {
 		padding: 4em 4em;
+	}
+}
+
+@media (min-width: 1024px) {
+	.container {
+		padding: 6em 8em;
+	}
+}
+
+@media (min-width: 1440px) {
+	.container {
+		max-width: 980px;
+		margin: 0px auto;
 	}
 }

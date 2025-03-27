@@ -3,10 +3,17 @@ import { Image } from "astro:assets";
 import HeaderLink from "./HeaderLink.astro";
 import hamburger from "@icons/hamburger.svg";
 import close from "@icons/close.svg";
+import logo from "@icons/logo.svg";
 ---
 
 <div class="navbar">
-    <h1>Logo</h1>
+    <a href="/" class="logo-link">
+        <Image
+            src={logo}
+            alt="Jonesy Private Bartending and Bar Staff Hire"
+            class="logo"
+        />
+    </a>
     <button class="mobile-nav-controls">
         <Image
             src={hamburger}
@@ -21,13 +28,23 @@ import close from "@icons/close.svg";
     </button>
     <nav>
         <HeaderLink href="/">Home</HeaderLink>
-        <HeaderLink href="/our-services">Our Service</HeaderLink>
-        <HeaderLink href="/about">About</HeaderLink>
-        <HeaderLink href="/contact">Contact</HeaderLink>
+        <HeaderLink href="/bar-staff-services">Bar Services</HeaderLink>
+        <HeaderLink href="/about-bar-hire-service">About</HeaderLink>
+        <HeaderLink href="/contact-jonesy-private-bartending"
+            >Contact</HeaderLink
+        >
     </nav>
 </div>
 
 <style>
+    .logo-link {
+        display: flex;
+        align-items: center;
+    }
+    .logo {
+        width: auto;
+        height: 38px;
+    }
     .navbar {
         display: flex;
         min-height: 58px;
@@ -75,27 +92,75 @@ import close from "@icons/close.svg";
         padding: 2em;
         z-index: 2;
     }
+
+    @media (min-width: 1024px) {
+        nav {
+            display: flex;
+            position: static;
+            background-color: transparent;
+            flex-direction: row;
+            height: inherit;
+            font-size: 1em;
+            padding: 0px;
+            width: fit-content;
+        }
+        .open-btn {
+            display: none;
+            visibility: hidden;
+        }
+        .navbar {
+            justify-content: space-between;
+            padding: 0px 4em;
+        }
+    }
 </style>
 
 <script>
+    import { gsap } from "gsap";
+
     document.addEventListener("DOMContentLoaded", () => {
         const mobileNavButton = document.querySelector(".mobile-nav-controls");
         const nav = document.querySelector("nav");
         const openBtn = document.querySelector(".open-btn");
         const closeBtn = document.querySelector(".close-btn");
 
-        mobileNavButton.addEventListener("click", () => {
-            if (nav.style.display === "flex") {
-                // Close the nav
-                nav.style.display = "none";
-                openBtn.style.display = "block";
-                closeBtn.style.display = "none";
-            } else {
-                // Open the nav
-                nav.style.display = "flex";
-                openBtn.style.display = "none";
-                closeBtn.style.display = "block";
-            }
-        });
+        let navOpen = false;
+
+        if (window.innerWidth < 1024) {
+            // Only apply GSAP behavior on mobile
+            gsap.set(nav, {
+                display: "none",
+                opacity: 0,
+                y: -20,
+            });
+
+            mobileNavButton.addEventListener("click", () => {
+                if (!navOpen) {
+                    gsap.set(nav, { display: "flex" });
+                    gsap.to(nav, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.5,
+                        ease: "power2.out",
+                    });
+                    openBtn.style.display = "none";
+                    closeBtn.style.display = "block";
+                    navOpen = true;
+                } else {
+                    gsap.to(nav, {
+                        opacity: 0,
+                        y: -20,
+                        duration: 0.4,
+                        ease: "power2.in",
+                        onComplete: () => {
+                            gsap.set(nav, { display: "none" });
+                        },
+                    });
+                    openBtn.style.display = "block";
+                    closeBtn.style.display = "none";
+                    navOpen = false;
+                }
+            });
+        }
     });
 </script>

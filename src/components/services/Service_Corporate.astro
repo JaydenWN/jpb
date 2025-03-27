@@ -33,8 +33,9 @@ const serviceTitle = "Corporate Event Bartending";
                 Reliable, seamless service
             </li>
         </ul>
-
-        <CtaButtonsLight />
+        <div class="cta-section">
+            <CtaButtonsLight />
+        </div>
     </div>
 </section>
 
@@ -57,5 +58,37 @@ const serviceTitle = "Corporate Event Bartending";
         display: flex;
         align-items: center;
         gap: 1em;
+    }
+
+    @media (min-width: 768px) {
+        .service-image {
+            grid-area: image;
+        }
+        h1 {
+            grid-area: header;
+        }
+        p {
+            grid-area: textContent;
+        }
+        ul {
+            grid-area: list;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+        .cta-section {
+            display: flex;
+            flex-direction: row-reverse;
+            grid-area: cta;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "header header"
+                "image textContent"
+                "image list"
+                "cta cta";
+        }
     }
 </style>

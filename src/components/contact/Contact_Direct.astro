@@ -5,45 +5,56 @@
 <section>
     <div class="container">
         <h1>Direct Contact</h1>
-        <p>Prefer to chat directly? We'd love to hear from you! You may contact us via e-mail or phone.</p>
-    
-    <div class="info">
-        <h2>Email</h2>
-        <p>Send us an email anytime!</p>
-        <a href="mailto:">info@jonesybartending.com.au</a>
-    </div>
+        <p>
+            Prefer to chat directly? We'd love to hear from you! You may contact
+            us via e-mail or phone.
+        </p>
 
-    <div class="info">
-        <h2>Phone</h2>
-        <p>Give us a call for immediate assistance!</p>
-        <a href="tel:">0400 123 456</a>
-    </div>
+        <div class="info">
+            <h2>Email</h2>
+            <p>Send us an email anytime!</p>
+            <a href="mailto:contact@jonesyprivatebartending.com"
+                >contact@jonesyprivatebartending.com</a
+            >
+        </div>
+
+        <div class="info">
+            <h2>Phone</h2>
+            <p>Give us a call for immediate assistance!</p>
+            <a href="tel:0423 740 299">0400 123 456</a>
+        </div>
     </div>
 </section>
 
 <style>
-    section{
+    section {
         background-color: #fff;
     }
-    .container{
+    .container {
         display: flex;
         flex-direction: column;
         gap: 2em;
     }
-    h1{
+    h1 {
         font-size: 1.65em;
     }
-    h2{
-        font-family: 'paragraph',sans-serif;
+    h2 {
+        font-family: "paragraph", sans-serif;
         font-weight: 700;
     }
-    a{
+    a {
         text-decoration: none;
-        color: black
+        color: black;
     }
-    .info{
+    .info {
         display: flex;
         flex-direction: column;
-        gap: .5em;
+        gap: 0.5em;
+    }
+
+    @media (min-width: 768px) {
+        p {
+            width: 75%;
+        }
     }
 </style>

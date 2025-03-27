@@ -22,7 +22,7 @@ const { title, quote, quotee } = Astro.props;
         margin: 0px 1em;
         border-radius: 3px;
         box-shadow: var(--box-shadow);
-        margin-bottom: 1em; 
+        margin-bottom: 1em;
         text-align: center;
         z-index: 0;
     }
@@ -47,13 +47,32 @@ const { title, quote, quotee } = Astro.props;
         margin: 2em auto 0px auto;
     }
 
-    @media (min-width: 768px){
-        .testimonial{
+    @media (min-width: 768px) {
+        .testimonial {
             margin: 0px 6em;
-            margin-bottom: 1em; 
+            margin-bottom: 1em;
         }
-        blockquote{
+        blockquote {
             padding: 2em 4em;
+        }
+    }
+    @media (min-width: 1024px) {
+        .testimonial {
+            margin: 0px 2em;
+            height: 100%;
+        }
+        p {
+            margin-top: auto;
+        }
+        h2 {
+            padding: 1em 4em;
+        }
+    }
+
+    @media (min-width: 1440px) {
+        .testimonial {
+            width: 50%;
+            margin: 0px auto;
         }
     }
 </style>

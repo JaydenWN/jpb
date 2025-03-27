@@ -1,15 +1,22 @@
 ---
+import { Image } from "astro:assets";
+import logo from "@icons/logo-light.svg";
 const today = new Date();
 ---
 
 <footer>
 	<div class="site-links">
+		<Image
+			src={logo}
+			alt="Private Bar Staff for Hire"
+			class="footer-logo"
+		/>
 		<p>Site Navigation</p>
 		<ul>
 			<li><a href="/">Home</a></li>
-			<li><a href="/">About</a></li>
-			<li><a href="/">Our Service</a></li>
-			<li><a href="/">Contact</a></li>
+			<li><a href="/about-bar-hire-service">About</a></li>
+			<li><a href="/bar-staff-services">Our Service</a></li>
+			<li><a href="/contact-jonesy-private-bartending">Contact</a></li>
 		</ul>
 	</div>
 	<div class="footer-end">
@@ -24,6 +31,12 @@ const today = new Date();
 		color: #fff;
 		padding: 1em;
 	}
+	.footer-logo {
+		opacity: 0.2;
+		width: 50%;
+		height: auto;
+		margin-bottom: 1em;
+	}
 	.site-links p {
 		font-weight: 600;
 	}
@@ -37,9 +50,12 @@ const today = new Date();
 		justify-content: center;
 		margin-top: 3em;
 	}
-	@media (min-width: 768px){
-		footer{
+	@media (min-width: 768px) {
+		footer {
 			padding: 4em 4em 0px 4em;
+		}
+		.footer-logo {
+			width: 200px;
 		}
 	}
 </style>

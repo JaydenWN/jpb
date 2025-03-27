@@ -17,7 +17,6 @@ import CtaButtonsLight from "@components/Cta-buttons-light.astro";
             experiences across Albury, Wangaratta, Beechworth, and beyond!
         </p>
         <div class="cta-button-area">
-
             <CtaButtonsLight />
         </div>
     </header>
@@ -39,27 +38,33 @@ import CtaButtonsLight from "@components/Cta-buttons-light.astro";
         height: auto;
     }
 
-    @media (min-width: 768px){
-        header{
+    @media (min-width: 768px) {
+        header {
             display: grid;
-            grid-template-areas: "title image"
-            "heroText image"
-            "buttons buttons";
+            grid-template-areas:
+                "title image"
+                "heroText image"
+                "buttons buttons";
             grid-template-columns: 1.5fr 1fr;
             gap: 3em;
         }
-        header h1{
+        header h1 {
             grid-area: title;
         }
-        header p{
+        header p {
             grid-area: heroText;
         }
-        .cta-button-area{
+        .cta-button-area {
             grid-area: buttons;
         }
-        .hero-img{
+        .hero-img {
             grid-area: image;
             width: 100%;
+        }
+    }
+    @media (min-width: 1024px) {
+        header {
+            grid-template-columns: 1fr 1fr;
         }
     }
 </style>

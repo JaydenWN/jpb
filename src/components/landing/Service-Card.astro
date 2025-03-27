@@ -49,19 +49,35 @@ const { image, link, cta, title } = Astro.props;
         margin-bottom: 1em;
     }
 
-    @media (min-width: 768px){
-        .service{
-            width: calc(50% - .5em);
-            min-height: 100%;
+    @media (min-width: 768px) {
+        .service {
+            display: flex;
+            flex-direction: column;
+            width: calc(50% - 0.5em);
+            box-sizing: border-box;
         }
-        .service-card{
+        .service-card {
+            height: 100%;
         }
-        .text-content{
+        .text-content {
             padding: 2em;
+            height: 100%;
         }
-        h2{
+        h2 {
             font-size: 1.15em;
         }
-        
+        a {
+            margin-top: auto;
+            margin-left: 0px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .service {
+            width: calc(50% - 1.5em);
+        }
+        h2 {
+            font-size: 1.45rem;
+        }
     }
 </style>

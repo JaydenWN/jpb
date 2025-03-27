@@ -10,7 +10,9 @@ const serviceTitle = "Wedding Bartending Services";
     <div class="container">
         <h1>{serviceTitle}</h1>
         <p>
-            Celebrate your big day stress-free, knowing our friendly bartenders will charm your guests with specially crafted cocktails and flawless service, perfectly tailored to your unique celebration.
+            Celebrate your big day stress-free, knowing our friendly bartenders
+            will charm your guests with specially crafted cocktails and flawless
+            service, perfectly tailored to your unique celebration.
         </p>
         <Image src={serviceImage} alt={serviceTitle} class="service-image" />
 
@@ -30,8 +32,9 @@ const serviceTitle = "Wedding Bartending Services";
                 Comprehensive setup and cleanup
             </li>
         </ul>
-
-        <CtaButtonsDark />
+        <div class="cta-section">
+            <CtaButtonsDark />
+        </div>
     </div>
 </section>
 
@@ -58,5 +61,34 @@ const serviceTitle = "Wedding Bartending Services";
         display: flex;
         align-items: center;
         gap: 1em;
+    }
+    @media (min-width: 768px) {
+        .service-image {
+            grid-area: image;
+        }
+        h1 {
+            grid-area: header;
+        }
+        p {
+            grid-area: textContent;
+        }
+        ul {
+            grid-area: list;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+        .cta-section {
+            grid-area: cta;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "header header"
+                "textContent image"
+                "list image"
+                "cta cta";
+        }
     }
 </style>

@@ -1,54 +1,81 @@
 ---
 import { Image } from "astro:assets";
-import clockIcon from '@icons/clock.svg'
+import clockIcon from "@icons/clock.svg";
 ---
 
 <section>
     <div class="container">
         <h1>Office Hours</h1>
-        <p>We're always ready to talk cocktails! Reach us during the hours below or leave us a message using our contact form anytime.</p>
+        <p>
+            We're always ready to talk cocktails! Reach us during the hours
+            below or leave us a message using our contact form anytime.
+        </p>
 
-        <div class="timeframe">
-                <Image src={clockIcon} alt="Operating Hours" class="clock"/>
+        <div class="times">
+            <div class="timeframe">
+                <Image src={clockIcon} alt="Operating Hours" class="clock" />
                 <h2>Monday - Saturday</h2>
-                <p>9:00am to 6:00pm</p>
-        </div>
+                <p>9:00am to 8:00pm</p>
+            </div>
 
-        <div class="timeframe">
-            <Image src={clockIcon} alt="Operating Hours" class="clock"/>
-            <h2>Sunday</h2>
-            <p>9:00am to 12:00pm</p>
-    </div>
+            <div class="timeframe">
+                <Image src={clockIcon} alt="Operating Hours" class="clock" />
+                <h2>Sunday</h2>
+                <p>9:00am to 12:00pm</p>
+            </div>
+        </div>
     </div>
 </section>
 
 <style>
-    h1{
+    h1 {
         font-size: 1.65rem;
     }
-    .container{
+    .container {
         display: flex;
         flex-direction: column;
-        gap: 3em
+        gap: 3em;
     }
-    .timeframe{
+    .timeframe {
         display: grid;
         gap: 1em;
-        grid-template-areas: "clock title"
-        "null time";
+        grid-template-areas:
+            "clock title"
+            "null time";
         grid-template-columns: 28px auto;
     }
-    .timeframe h2{
-        grid-area: title
+    .times {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
     }
-    .timeframe p{
-        grid-area: time
+    .timeframe h2 {
+        grid-area: title;
     }
-    .clock{
+    .timeframe p {
+        grid-area: time;
+    }
+    .clock {
         grid-area: clock;
         width: 26px;
         height: auto;
         margin: auto;
     }
-    
+
+    @media (min-width: 768px) {
+        p {
+            width: 75%;
+        }
+        .times {
+            gap: 4em;
+        }
+    }
+    @media (min-width: 1024px) {
+        .times {
+            flex-direction: row;
+        }
+        .timeframe {
+            width: 100%;
+        }
+    }
 </style>

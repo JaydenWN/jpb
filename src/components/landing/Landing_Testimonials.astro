@@ -80,6 +80,33 @@ import TestimonialCard from "./Testimonial-Card.astro";
     .embla__dot.is-selected {
         background-color: var(--gold);
     }
+
+    @media (min-width: 768px) {
+        .embla__slide {
+            flex: 0 0 50%;
+            margin-bottom: 2em;
+            margin-left: 6em;
+        }
+    }
+
+    @media (min-width: 1440px) {
+        .embla__slide {
+            margin-bottom: 0px;
+            flex: 0 0 100%;
+            margin-left: 0px;
+        }
+        .embla {
+            max-width: 980px;
+            margin: 0px auto;
+            border-radius: 6px;
+            border: 1px solid var(--light);
+            padding: 2em;
+            box-sizing: border-box;
+        }
+        .embla__dots {
+            margin-bottom: 4em;
+        }
+    }
 </style>
 
 <!-- Use client:load to ensure this script runs on the client -->

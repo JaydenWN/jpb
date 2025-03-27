@@ -4,11 +4,13 @@ import callIcon from "@icons/call-light.svg";
 ---
 
 <div class="cta-btns">
-    <a href="tel:04040" class="secondary">
+    <a href="tel:0423 740 299" class="secondary">
         <Image src={callIcon} alt="call jonesy private bartending" />
         Call
     </a>
-    <a href="/" class="primary"> Book Your Bartender Now </a>
+    <a href="/contact-jonesy-private-bartending/#contact-form" class="primary">
+        Book Your Bartender Now
+    </a>
 </div>
 
 <style>
@@ -22,6 +24,8 @@ import callIcon from "@icons/call-light.svg";
         border-radius: 6em;
         background-color: var(--gold);
         width: fit-content;
+        box-shadow: var(--box-shadow);
+        font-weight: 800;
     }
 
     .secondary {
@@ -40,5 +44,14 @@ import callIcon from "@icons/call-light.svg";
         padding: 0.4em 1em;
         color: var(--dark);
         font-weight: 800;
+    }
+
+    @media (min-width: 1024px) {
+        .primary {
+            transition: box-shadow 0.25s cubic-bezier();
+        }
+        .primary:hover {
+            box-shadow: none;
+        }
     }
 </style>
